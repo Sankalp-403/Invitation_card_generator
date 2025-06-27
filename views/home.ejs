@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invitation Card Generator</title>
+  <link rel="stylesheet" href="styles1.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>Invitation Card Generator</h1>
+    <p>Create beautiful invitation cards in minutes!</p>
+  </header>
+
+  <main>
+    <!-- Template Selection -->
+    <section class="templates">
+      <h2>Select a Template</h2>
+      <div class="template-gallery">
+        <img src="wedding_img.jpg" alt="Template 1" class="template" onclick="selectTemplate('template1')">
+        <img src="Birthday_img.jpg" alt="Template 2" class="template" onclick="selectTemplate('template2')">
+        <img src="Baby_shower.jpg" alt="Template 3" class="template" onclick="selectTemplate('template3')">
+      </div>
+    </section>
+
+    <!-- Editor -->
+    <section id="editor" class="hidden">
+      <h2 >Customize Your Card</h2>
+      <div id="card-preview" class="card-preview">
+        <p id="event-name" >Event Name</p>
+        <p id="event-date">Event Date </p>
+        <p id="event-location">Event Location</p>
+        <img id="uploaded-image" class="hidden">
+      </div>
+      <form id="editor-form">
+        <label font-family:>
+          Event Name:
+          <input type="text" id="event-name-input" placeholder="Enter event name" >
+        </label>
+        <label>
+          Date & Time:
+          <input type="text" id="event-date-input" placeholder="Enter date & time">
+        </label>
+        <label>
+          Location:
+          <input type="text" id="event-location-input" placeholder="Enter location">
+        </label>
+        <label>
+          Upload Image:
+          <input type="file" id="image-upload" accept="image/*">
+        </label>
+        <button  type="button" onclick="downloadCard()">Download Card</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
